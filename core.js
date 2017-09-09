@@ -2,7 +2,9 @@ jQuery(document).ready(function($){
     $carousel = $(".carousel");
     $window = $(window);
 
-    $(".nav").sideNav();
+    $(".nav").sideNav({
+
+    });
     $(".parallax").parallax();
 
     if ($carousel.length > 0) {
@@ -27,5 +29,12 @@ jQuery(document).ready(function($){
             // var percentage = (ct + cst) / $carousel.height()*10 - 5 * (720/$carousel.height());
             $carousel.find('img').css('filter', 'blur(' + percentage + 'px)');
         });
+    }
+
+    $fillviewport = $('.fillviewport');
+    if ($fillviewport.length > 0) {
+        var h = $window.innerHeight() - $('body>header').outerHeight() - $('body>footer').outerHeight() - $('section.icon-bar').outerHeight();
+        $fillviewport.css('min-height', h+'px');
+        $fillviewport.css('overflow', 'hidden');
     }
 });

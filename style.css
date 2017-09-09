@@ -12,6 +12,7 @@ Tags:
 @todo: grunt/gulpify this file
 */
 
+
 .raleway {
     font-family: "Raleway", "Roboto", sans-serif;
 }
@@ -91,6 +92,10 @@ div.carousel .cover {
     position:absolute;
     top:60%;
 }
+.single div.carousel .cover {
+    top: auto;
+    bottom:10%;
+}
 
 div.carousel .post-title{
     background:#202020;
@@ -114,14 +119,55 @@ div.carousel .excerpt {
     padding:0.3em;
 }
 
+.alignright, .alignleft{
+    padding:5px;
+    border:1px #666 solid;
+}
+.alignright {
+    float:right;
+    margin:0 0 10px 10px;
+}
+.alignleft {
+    float:left;
+    margin:0 10px 10px 0;
+}
+
+
+
 @media screen and (max-width:960px) {
 
     section.main-carousel,
-    div.carousel a.carousel-item{
+    .carousel,
+    div.carousel .carousel-item,
+    .carousel .parallax-container{
         height:400px;
+    }
+
+    .carousel-item img {
+        max-height:100%;
+        width:100%;
     }
 
     div.carousel .cover {
         top:40%;
+    }
+
+    .single div.carousel-item .cover {
+        left:0;
+        right:0;
+        bottom:0;
+    }
+    .single .carousel-item .post-title {
+        display:block;
+        float:none;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    nav .brand-logo {
+        left:auto;
+        -moz-transform:none;
+        -webkit-transform:none;
+        transform:none;
     }
 }

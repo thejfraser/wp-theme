@@ -27,16 +27,20 @@ $thumb = get_the_post_thumbnail( null, 'featured-banner', [ 'style' => 'width:10
 
 
 	<article>
-		<h1 class="title raleway"><?php echo get_the_title(); ?></h1>
-
 
 		<?php the_content(); ?>
 
+		<?php echo  get_the_tag_list( 'Tagged: <div class="chip">#', '</div><div class="chip">#', '</div>', get_the_ID()); ?>
+
 	</article>
-	<?php
-		endwhile;
-	endif;
-	?>
+
 </div>
 
+
+
+
+	<?php
+endwhile;
+endif;
+?>
 <?php get_footer(); ?>

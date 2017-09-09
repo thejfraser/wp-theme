@@ -1,0 +1,83 @@
+<?php
+if ( function_exists( "register_field_group" ) ) {
+	register_field_group( array(
+		'id'         => 'acf_featured-banners',
+		'title'      => 'Featured Banners',
+		'fields'     => array(
+			array(
+				'key'          => 'field_59b044e77776c',
+				'label'        => 'Image',
+				'name'         => 'image',
+				'type'         => 'image',
+				'required'     => 1,
+				'save_format'  => 'url',
+				'preview_size' => 'featured-banner',
+				'library'      => 'all',
+			),
+			array(
+				'key'           => 'field_59b0447f7776a',
+				'label'         => 'Title',
+				'name'          => 'title',
+				'type'          => 'text',
+				'required'      => 1,
+				'default_value' => '',
+				'placeholder'   => '',
+				'prepend'       => '',
+				'append'        => '',
+				'formatting'    => 'none',
+				'maxlength'     => '',
+			),
+			array(
+				'key'           => 'field_59b044a47776b',
+				'label'         => 'Strapline',
+				'name'          => 'strapline',
+				'type'          => 'text',
+				'instructions'  => 'Short additional description for display on the banner',
+				'default_value' => '',
+				'placeholder'   => '',
+				'prepend'       => '',
+				'append'        => '',
+				'formatting'    => 'none',
+				'maxlength'     => '',
+			),
+			array(
+				'key'           => 'field_59b044fe7776d',
+				'label'         => 'Link',
+				'name'          => 'link',
+				'type'          => 'text',
+				'instructions'  => 'Link for the banner',
+				'default_value' => '',
+				'placeholder'   => '',
+				'prepend'       => '',
+				'append'        => '',
+				'formatting'    => 'none',
+				'maxlength'     => '',
+			),
+			array(
+				'key'           => 'field_59b045447776e',
+				'label'         => 'Open in new tab',
+				'name'          => 'open_in_new_tab',
+				'type'          => 'true_false',
+				'message'       => 'open link in new tab',
+				'default_value' => 0,
+			),
+		),
+		'location'   => array(
+			array(
+				array(
+					'param'    => 'post_type',
+					'operator' => '==',
+					'value'    => 'featured-banners',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options'    => array(
+			'position'       => 'normal',
+			'layout'         => 'default',
+			'hide_on_screen' => array(),
+		),
+		'menu_order' => 0,
+	) );
+}

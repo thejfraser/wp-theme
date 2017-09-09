@@ -102,11 +102,11 @@ add_filter( 'style_loader_src', '_remove_script_version', 15, 1 );
 add_filter( 'image_size_names_choose', function ( $sizes ) {
 	return array_merge( $sizes, array(
 		'featured-banner' => 'Featured Banner',
-		'card-image' => 'Card Image'
+		'card-image'      => 'Card Image'
 	) );
 } );
 add_image_size( 'featured-banner', 1920, 1080, [ 'center', 'center' ] );
-add_image_size( 'card-image', 412, 154, true);
+add_image_size( 'card-image', 412, 154, true );
 
 add_action( 'save_post', function ( $postId ) {
 	if (
@@ -114,7 +114,7 @@ add_action( 'save_post', function ( $postId ) {
 		|| wp_is_post_autosave( $postId )
 		|| wp_is_post_revision( $postId )
 	) {
-		return $postId;;
+		return $postId;
 	}
 
 	if ( get_save_post_type( $postId ) === 'featured-banners' ) {
@@ -124,7 +124,7 @@ add_action( 'save_post', function ( $postId ) {
 		}
 	}
 
-	if (in_array( get_save_post_type( $postId ), ['post', 'off-topic-posts']) ){
+	if ( in_array( get_save_post_type( $postId ), [ 'post', 'off-topic-posts' ] ) ) {
 		$cache = get_html_cache_path( 'home-loop' );
 		if ( $cache ) {
 			unlink( $cache );
@@ -153,3 +153,5 @@ function get_html_cache_path( $item ) {
 function get_html_cache_path_anyway( $item ) {
 	return trailingslashit( get_stylesheet_directory() ) . 'html-cache/' . $item . '.php';
 }
+
+include( 'components/acf.php' );
