@@ -1,5 +1,6 @@
 <?php
 add_theme_support( 'post-thumbnails' );
+add_theme_support( 'post-templates' );
 function _remove_script_version( $src ) {
 	$parts = explode( '?ver', $src );
 
@@ -61,7 +62,40 @@ add_action( 'init', function () {
 		'hierarchical'       => false,
 		'menu_position'      => null,
 		'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' ),
+		'taxonomies'         => [ 'post_tag', 'category' ]
 	] );
+
+	register_post_type( 'posts', [
+		'labels'             => [
+			'name'               => 'Topic Posts',
+			'singular_name'      => 'Topic Post',
+			'menu_name'          => 'Topic Posts',
+			'name_admin_bar'     => 'Topic Posts',
+			'add_new'            => 'Add New',
+			'add_new_item'       => 'Add New Post',
+			'new_item'           => 'New Post',
+			'edit_item'          => 'Edit Post',
+			'view_item'          => 'View Post',
+			'all_items'          => 'All Posts',
+			'search_items'       => 'Search Posts',
+			'parent_item_colon'  => 'Parent Posts:',
+			'not_found'          => 'No posts found',
+			'not_found_in_trash' => 'No posts found in Trash',
+		],
+		'public'             => true,
+		'publicly_queryable' => true,
+		'show_ui'            => true,
+		'show_in_menu'       => true,
+		'query_var'          => true,
+		'rewrite'            => array( 'slug' => 'posts' ),
+		'capability_type'    => 'post',
+		'has_archive'        => true,
+		'hierarchical'       => false,
+		'menu_position'      => null,
+		'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' ),
+		'taxonomies'         => [ 'post_tag', 'category' ]
+	] );
+
 
 	register_post_type( 'featured-banners', [
 		'labels'             => [
@@ -155,3 +189,63 @@ function get_html_cache_path_anyway( $item ) {
 }
 
 include( 'components/acf.php' );
+
+add_filter( 'get_the_archive_title', function ( $title ) {
+	if ( is_post_type_archive( 'off-topic-posts' ) ) {
+		return 'Off-topic Posts';
+	}
+	if ( is_post_type_archive( 'posts' ) ) {
+		return 'Posts';
+	}
+
+	return $title;
+} );
+
+
+function buildPagination( $current, $max, $link ) {
+
+	$current = max( $current, 1 );
+	$out     = '';
+	if ( $max === 1 ) {
+		return '';
+	}
+
+	$loop = 2;
+	$out  = '<ul class="pages-nav">';
+	if ( $current == 1 ) {
+		$out .= '<li class="grey lighten-4 currentPage">1</li>';
+	} else {
+		$out .= "<li class='grey lighten-4 '><a href='{$link}'>1</a></li>";
+	}
+
+	if ( $loop < $current ) :
+		$out .= '<li class="hasmore">&hellip;<ul class="more z-depth-1">';
+		while ( $loop < $current ) {
+			$out .= "<li class='grey lighten-4 '><a href='{$link}page/{$loop}/'>{$loop}</a></li>";
+			$loop ++;
+		}
+		$out .= '</ul></li>';
+	endif;
+
+	if ( $current > 1 ) {
+		$out .= "<li class='grey lighten-4 '>{$current}</li>";
+		$loop ++;
+	}
+
+
+	if ( $loop < $max ):
+		$out .= '<li class="hasmore">&hellip;<ul class="more z-depth-1">';
+		while ( $loop < $max ) {
+			$out .= "<li class='grey lighten-4 '><a href='{$link}page/{$loop}/'>{$loop}</a></li>";
+			$loop ++;
+		}
+		$out .= '</ul></li>';
+	endif;
+
+	if ( $current < $max ) {
+		$out .= "<li class='grey lighten-4 '><a href='{$link}page/{$max}/'>{$max}</a></li>";
+	}
+
+
+	return $out;
+}

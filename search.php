@@ -40,8 +40,8 @@
 				<?php
 			endwhile;
 		else: ?>
-		<p class="flow-text center-align grey-text text-lighten-2">- No Results Found -</p>
-		<?php
+			<p class="flow-text center-align grey-text text-lighten-2">- No Results Found -</p>
+			<?php
 		endif;
 		?>
 	</div>
