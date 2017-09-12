@@ -206,7 +206,7 @@ function buildPagination( $current, $max, $link ) {
 
 	$current = max( $current, 1 );
 	$out     = '';
-	if ( $max === 1 ) {
+	if ( $max <= 1 ) {
 		return '';
 	}
 

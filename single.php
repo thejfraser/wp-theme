@@ -17,7 +17,7 @@ if ( have_posts() ) :
 						</div>
 					</div>
 					<div class="cover">
-						<h2 class="post-title white-text raleway"><?php echo get_the_title() ?></h2>
+						<h1 class="post-title white-text raleway"><?php echo get_the_title() ?></h1>
 					</div>
 				</div>
 			</div>

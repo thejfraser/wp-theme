@@ -1,10 +1,10 @@
 <?php get_header(); ?>
 
 
-<section class="recent-posts container">
+<section class="search-posts container fillviewport">
 	<div class="row">
 		<div class="col s12 center-align">
-			<h2 class="raleway">Search For: <code><?php echo esc_html( $_GET['s'] ); ?></code></h2>
+			<h1 class="raleway">Search: <?php echo esc_html( $_GET['s'] ); ?></h1>
 		</div>
 	</div>
 	<div class="row">

@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 
-<section class="recent-posts container">
+<section class="recent-posts container fillviewport">
 	<div class="row">
 		<div class="col s12 center-align">
 			<h1 class="raleway"><?php the_archive_title(); ?></h1>
@@ -15,6 +15,8 @@
 				the_post();
 				get_template_part( 'includes/post-loop' );
 			endwhile;
+		else:
+			echo '<p class="flow-text center-align grey-text text-lighten-2">- No Posts Found -</p>';
 		endif;
 		?>
 
