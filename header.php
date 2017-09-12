@@ -38,16 +38,12 @@ $htag = ( is_home() || is_front_page() ) ? 'h1' : 'span';
 	<li>
 		<div class="user-view">
 			<div class="background">
-				<img src="http://www.jamiefraser.co.uk/assets/dw.jpg"/>
+				<img src="/wp-content/themes/jamiefraser.co.uk/img/dw.jpg"/>
 
 			</div>
-			<a href="enquiries@jamiefraser.co.uk">
+			<a href="mailto:enquiries@jamiefraser.co.uk">
 				<img class="circle" src="/wp-content/themes/jamiefraser.co.uk/img/jamie-fraser.jpg" width="64" height="64">
-			</a>
-			<a href="enquiries@jamiefraser.co.uk">
 				<span class="white-text name blockit">Jamie Fraser</span>
-			</a>
-			<a href="enquiries@jamiefraser.co.uk">
 				<span class="white-text email blockit">Hello@JamieFraser.co.uk</span>
 			</a>
 		</div>
