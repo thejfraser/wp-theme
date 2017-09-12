@@ -249,3 +249,8 @@ function buildPagination( $current, $max, $link ) {
 
 	return $out;
 }
+
+
+add_filter( 'content_url', function ( $url ) {
+	return str_replace( '.jamiefraser.co.uk/wp-content', 'static.jamiefraser.co.uk', $url );
+} );

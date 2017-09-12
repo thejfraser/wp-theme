@@ -25,7 +25,7 @@ $htag = ( is_home() || is_front_page() ) ? 'h1' : 'span';
 		</<?php echo $htag; ?>>
 		<ul id="nav-mobile" class="right">
 			<li>
-				<a href="#" data-activates="slide-out" class="nav">
+				<a href="#menu!" data-activates="slide-out" class="nav">
 					<span class="hide-on-med-and-down raleway">Menu <i class="material-icons right">menu</i></span>
 					<i class="material-icons hide-on-large-only">menu</i>
 				</a>
@@ -41,22 +41,21 @@ $htag = ( is_home() || is_front_page() ) ? 'h1' : 'span';
 				<img src="http://www.jamiefraser.co.uk/assets/dw.jpg"/>
 
 			</div>
-			<a href="#!user">
-				<img class="circle" src="images/yuna.jpg">
+			<a href="enquiries@jamiefraser.co.uk">
+				<img class="circle" src="/wp-content/themes/jamiefraser.co.uk/img/jamie-fraser.jpg" width="64" height="64">
 			</a>
-			<a href="#!name">
+			<a href="enquiries@jamiefraser.co.uk">
 				<span class="white-text name blockit">Jamie Fraser</span>
 			</a>
-			<a href="#!email">
+			<a href="enquiries@jamiefraser.co.uk">
 				<span class="white-text email blockit">Hello@JamieFraser.co.uk</span>
 			</a>
 		</div>
 	</li>
-	<li><a href="/posts/"><i class="material-icons" aria-hidden="true">view_headline</i>All Posts</a></li>
-	<li><a href="/off-topic"><i class="material-icons" aria-hidden="true">explore</i>Off-Topic</a></li>
+	<li><a href="/posts/" class="waves-effect"><i class="material-icons blue-text" aria-hidden="true">view_headline</i>All Posts</a></li>
+	<li><a href="/off-topic" class="waves-effect"><i class="material-icons blue-text" aria-hidden="true">explore</i>Off-Topic</a></li>
 	<li>
 		<div class="divider"></div>
 	</li>
-	<li><a class="subheader">Subheader</a></li>
-	<li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+	<li><a href="/contact" class="waves-effect"><i class="material-icons blue-text" aria-hidden="true">email</i>Get In Touch</a></li>
 </ul>
