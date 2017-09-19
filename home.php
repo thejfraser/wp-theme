@@ -70,7 +70,7 @@
 				if ($postQuery->have_posts()):
 					while( $postQuery->have_posts()) {
 						$postQuery->the_post();
-						get_template_part( 'includes/home-loop' );
+						get_template_part( 'includes/post-loop' );
 					}
 				endif;
 
