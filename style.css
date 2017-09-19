@@ -211,5 +211,21 @@ ul.pages-nav ul li + li {
 
 ul.pages-nav li.showmore ul {
     display: block;
+}
 
+code {
+    background: #ececec;
+    color: darkred;
+    display:block;
+    padding: 0 5px;
+    border: 1px silver solid;
+    white-space:pre-line;
+}
+code.inline {
+    display: inline;
+    display: inline-block;
+    vertical-align: middle;
+}
+.highlight {
+    background:#ffa;
 }

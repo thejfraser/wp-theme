@@ -7,6 +7,12 @@ if ( have_posts() ) :
 
 		$thumb = get_the_post_thumbnail( null, 'featured-banner', [ 'style' => 'width:100%; height:1080px;' ] );
 
+		if (!$thumbnail) {
+			$thumb = sprintf(
+				'<img width="1920" height="1080" alt="Article image header" src="%s" class="default-image default-feature-banner">',
+				'https://wwwstatic.jamiefraser.co.uk/themes/jamiefraser.co.uk/img/default-post-image.jpg'
+			);
+		}
 		?>
 		<section class="main-carousel featured grey lighten-2">
 			<div class="carousel">
