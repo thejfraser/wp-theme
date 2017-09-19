@@ -12,6 +12,11 @@ Tags:
 @todo: grunt/gulpify this file
 */
 
+* {
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+}
 .raleway {
     font-family: "Raleway", "Roboto", sans-serif;
 }
@@ -234,4 +239,8 @@ code.inline {
     padding:5px;
     border: 1px silver solid;
     margin:10px 0;
+}
+
+.container .image-holder img {
+    max-width:100%;
 }
