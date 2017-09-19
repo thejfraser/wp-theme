@@ -229,3 +229,9 @@ code.inline {
 .highlight {
     background:#ffa;
 }
+.image-holder img{
+    background:#ececec;
+    padding:5px;
+    border: 1px silver solid;
+    margin:10px 0;
+}
