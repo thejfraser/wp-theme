@@ -84,7 +84,7 @@
 
 <div class="row">
 	<div class="col s6 center-align">
-		<a class="waves-effect waves-light btn-large orange darken-2" href="<?php echo get_post_type_archive_link( 'post' ); ?>">
+		<a class="waves-effect waves-light btn-large orange darken-2" href="<?php echo get_post_type_archive_link( 'posts' ); ?>">
 			Read more posts
 		</a>
 	</div>
