@@ -245,3 +245,6 @@ code.inline {
     max-width:100%;
     height:auto;
 }
+.parallax-container .parallax img {
+    height:auto !important;
+}
