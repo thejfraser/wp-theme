@@ -37,12 +37,10 @@ Tags:
     font-size: 1.4rem;
 }
 
-.carousel {
+.carousel,
+.carousel .parallax-container{
     max-height: 720px;
-}
-
-.carousel .parallax-container {
-    height: 720px;
+    height:720px;
 }
 
 section.main-carousel {
