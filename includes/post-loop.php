@@ -12,20 +12,21 @@ if (!$thumb) {
 		<div class="card-image waves-effect waves-block waves-blue">
 			<?php echo $thumb; ?>
 		</div>
-		<div class="card-stacked">
-			<div class="card-content">
-				<span class="card-title activator grey-text text-darken-4"><i class="material-icons right" aria-hidden="true">more_vert</i> <?php echo get_the_title(); ?></span>
-			</div>
-			<div class="card-action single-card-action">
-				<a href="<?php the_permalink(); ?>" class="block blue-text">Read Post <i class="material-icons right" aria-hidden="true">arrow_forward</i></a>
-			</div>
+
+		<div class="card-content">
+			<span class="card-title activator grey-text text-darken-4 truncate"><i class="material-icons right" aria-hidden="true">more_vert</i> <?php echo get_the_title(); ?></span>
 		</div>
+
 		<div class="card-reveal">
-			<i class="material-icons right">close</i>
+			<h2 class="card-title"><i class="material-icons right">close</i><?php echo get_the_title(); ?></h2>
 			<?php echo wpautop(get_the_excerpt()); ?>
 			<div class="reveal-foot">
 				<?php echo get_the_tag_list( '<div class="chip">#', '</div><div class="chip">#', '</div>', get_the_ID() ); ?>
 			</div>
+		</div>
+
+		<div class="card-action single-card-action">
+			<a href="<?php the_permalink(); ?>" class="block blue-text">Read Post <i class="material-icons right" aria-hidden="true">arrow_forward</i></a>
 		</div>
 	</div>
 </div>
