@@ -10,7 +10,7 @@ function _remove_script_version( $src ) {
 add_action( 'wp_enqueue_scripts', function () {
 	wp_enqueue_style( 'Fonts', 'https://fonts.googleapis.com/icon?family=Material+Icons|Raleway:400,700', [ ], null );
 	wp_enqueue_style( 'Materialize', 'https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css', [ ], null );
-	wp_enqueue_style( 'Core', get_stylesheet_uri(), [ 'Materialize' ], null );
+	wp_enqueue_style( 'Core', get_stylesheet_uri(), [ 'Materialize' ], 1 );
 	wp_enqueue_script( 'Materialize', 'https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js', [ 'jquery' ], null, true );
 	wp_enqueue_script( 'Core', get_stylesheet_directory_uri() . '/core.js', [ 'jquery' ], null, true );
 } );

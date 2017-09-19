@@ -243,4 +243,5 @@ code.inline {
 
 .container .image-holder img {
     max-width:100%;
+    height:auto;
 }
