@@ -83,12 +83,12 @@
 </section>
 
 <div class="row">
-	<div class="col s12 m6 center-align">
+	<div class="col s6 center-align">
 		<a class="waves-effect waves-light btn-large orange darken-2" href="<?php echo get_post_type_archive_link( 'post' ); ?>">
 			Read more posts
 		</a>
 	</div>
-	<div class="col s12 m6 center-align">
+	<div class="col s6 center-align">
 		<a class="waves-effect waves-light btn-large orange darken-2" href="<?php echo get_post_type_archive_link( 'off-topic-posts' ); ?>">
 			Go off topic
 		</a>

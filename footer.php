@@ -6,11 +6,11 @@ if ( ! is_home() ) {
 
 <footer class="page-footer blue darken-3">
 	<div class="container">
-		<p class="center-align">"Random thought for the day"</p>
+		<p class="center-align">"If the Earth was flat, wouldn't cats have pushed everything off by now?"</p>
 	</div>
 	<div class="footer-copyright">
 		<div class="container">
-			&copy; 2017 &bull; <a href="">Jamie Fraser</a>
+			&copy; 2017 &bull; <a href="https://www.jamiefraser.co.uk">Jamie Fraser</a>
 		</div>
 	</div>
 </footer>
