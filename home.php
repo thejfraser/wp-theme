@@ -61,7 +61,7 @@
 			else:
 				ob_start();
 				$postQuery = new WP_Query( [
-					'post_type' => ['post', 'off-topic-posts'],
+					'post_type' => ['posts', 'off-topic-posts'],
 					'posts_per_page' => 9,
 					'orderby' => 'published',
 					'order' => 'DESC'

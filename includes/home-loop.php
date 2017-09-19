@@ -1,10 +1,16 @@
 <?php
-$thumbId = get_the_post_thumbnail( null, 'card-image', [ 'class' => 'activator' ] );
+$thumb = get_the_post_thumbnail( null, 'card-image', [ 'class' => 'activator' ] );
+if (!$thumb) {
+	$thumb = sprintf(
+		'<img width="412" height="154" alt="Article image header" src="%s" class="default-image default-card-image activator">',
+		'https://wwwstatic.jamiefraser.co.uk/themes/jamiefraser.co.uk/img/default-card-image.jpg'
+	);
+}
 ?>
 <div class="col s8 offset-s2 m4">
 	<div class="card small">
 		<div class="card-image waves-effect waves-block waves-blue">
-			<?php echo $thumbId; ?>
+			<?php echo $thumb; ?>
 		</div>
 		<div class="card-content">
 			<span class="card-title activator grey-text text-darken-4"><?php echo get_the_title(); ?><i
