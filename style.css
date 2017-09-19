@@ -248,3 +248,13 @@ code.inline {
 .parallax-container .parallax img {
     height:auto !important;
 }
+.block {
+    display:block;
+}
+.reveal-foot {
+    position:absolute;
+    left:3px;
+    right:3px;
+    bottom:3px;
+    top:auto;
+}
